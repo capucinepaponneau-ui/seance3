@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>ToutouMiam - Croquettes Premium</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; background-color: #f4f4f4; }
+        .container { display: flex; justify-content: center; gap: 20px; padding: 20px; }
+        .card { border: 1px solid #ddd; padding: 15px; background: white; border-radius: 8px; width: 200px; }
+        button { background-color: #ff9900; border: none; padding: 10px; cursor: pointer; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Bienvenue chez ToutouMiam 🐾</h1>
+    <p>Les meilleures croquettes pour votre meilleur ami.</p>
+    
+    <div class="container">
+        {% for p in produits %}
+        <div class="card">
+            <h3>{{ p.nom }}</h3>
+            <p><strong>{{ p.prix }}€</strong></p>
+            <a href="/produit/{{ p.id }}"><button>Voir détails</button></a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
